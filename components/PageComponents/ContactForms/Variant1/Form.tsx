@@ -38,21 +38,21 @@ interface Variant1Props {
 }
 
 const SERVICES = [
-  { icon: faFan,             label: 'AC Repair' },
-  { icon: faFire,            label: 'Heating / Furnace' },
-  { icon: faWrench,          label: 'New Installation' },
-  { icon: faFilter,          label: 'Duct Cleaning' },
-  { icon: faThermometerHalf, label: 'Maintenance' },
-  { icon: faWind,            label: 'Air Quality' },
-  { icon: faBolt,            label: 'Emergency' },
+  { icon: faFan,             label: 'Full Detail' },
+  { icon: faFire,            label: 'Ceramic Coating' },
+  { icon: faWrench,          label: 'Paint Correction' },
+  { icon: faFilter,          label: 'Interior Detail' },
+  { icon: faThermometerHalf, label: 'Maintenance Detail' },
+  { icon: faWind,            label: 'Headlight Restoration' },
+  { icon: faBolt,            label: 'Maintenance Detail' },
 ];
 
 // Compact trust chips (replaces standalone .trustStrip block)
 const TRUST_CHIPS = [
-  { icon: faClock,        text: 'Same-day available' },
-  { icon: faTag,          text: 'Flat-rate pricing' },
-  { icon: faShieldHalved, text: 'NATE · TDLR' },
-  { icon: faStar,         text: '4.9★ · 300+ reviews' },
+  { icon: faClock,        text: 'Flexible booking' },
+  { icon: faTag,          text: 'Transparent packages' },
+  { icon: faShieldHalved, text: 'Product-Certified · Insured' },
+  { icon: faStar,         text: '4.9★ · 1,600+ reviews' },
 ];
 
 export default function Variant1({ title, cityName, slug, spot, formVariant }: Variant1Props) {
@@ -133,7 +133,7 @@ export default function Variant1({ title, cityName, slug, spot, formVariant }: V
                 </div>
                 <h3 className={styles.successTitle}>Request Received!</h3>
                 <p className={styles.successText}>
-                  A licensed Arctic Air technician will reach out shortly. Keep an eye on your inbox and phone.
+                  A licensed GlossLab technician will reach out shortly. Keep an eye on your inbox and phone.
                 </p>
                 <div className={styles.successBadges}>
                   <span>✓ Flat-rate quote</span>
@@ -206,9 +206,9 @@ export default function Variant1({ title, cityName, slug, spot, formVariant }: V
                     <div className={styles.altContact}>
                       <FontAwesomeIcon icon={faPhone} />
                       <span>Need help now?{' '}
-                        <a href="tel:+12549001234"
-                          onClick={() => trackEvent({ eventType: 'phone_click', elementLabel: 'Call (254) 900-1234', section: 'ContactForm-V1' })}>
-                          Call (254) 900-1234
+                        <a href="tel:+12549501616"
+                          onClick={() => trackEvent({ eventType: 'phone_click', elementLabel: 'Call (254) 950-1616', section: 'ContactForm-V1' })}>
+                          Call (254) 950-1616
                         </a>
                       </span>
                     </div>

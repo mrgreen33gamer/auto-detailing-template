@@ -31,47 +31,47 @@ interface GuaranteeSectionProps {
 const DEFAULT_GUARANTEES: Guarantee[] = [
   {
     icon: faTag,
-    title: "Flat-Rate Pricing. Always.",
+    title: "Transparent Package Pricing",
     description:
-      "You get a firm price before we start — no hourly billing, no surprise add-ons. What we quote is what you pay.",
+      "You get a clear package scope before we start — vehicle size, condition level, and included steps. No mystery upsells mid-detail.",
   },
   {
     icon: faShieldHalved,
-    title: "1-Year Parts & Labor Warranty",
+    title: "Satisfaction Re-Detail Guarantee",
     description:
-      "Every repair we perform is covered for a full year — parts and labor. If it fails within 12 months, we fix it at no charge.",
+      "If work we completed within the agreed scope is not right, we re-detail the affected area. We stand behind the finish.",
   },
   {
     icon: faRotateLeft,
-    title: "Satisfaction Guarantee",
+    title: "Careful Handling Always",
     description:
-      "Not satisfied with our work? We'll return to make it right — or refund you. We stand behind every job, no exceptions.",
+      "Soft mitts, proper decon, controlled polish steps, and interior-safe chemistry. Your vehicle is treated like a showpiece.",
   },
   {
     icon: faCertificate,
-    title: "NATE-Certified Technicians",
+    title: "Product-Certified Detailers",
     description:
-      "Every tech who enters your home is NATE-certified and TDLR-licensed. No apprentices working alone — ever.",
+      "Bonded & insured studio with product-certified installers. Proven coatings and processes — not gas-station shortcuts.",
   },
   {
     icon: faCalendarCheck,
-    title: "No Contracts. No Lock-In.",
+    title: "No Membership Lock-In",
     description:
-      "Our maintenance plans are month-to-month. We earn your business with every visit — not by holding you hostage with a contract.",
+      "Maintenance plans are flexible. We earn repeat visits with results — not long contracts.",
   },
   {
     icon: faStar,
-    title: "On-Time or We Call Ahead",
+    title: "On-Time Drop-Off Windows",
     description:
-      "We respect your time. If we're running late, we call before your window closes — and we show up when we say we will.",
+      "We respect your schedule. If timing shifts, we communicate early so you are never left guessing.",
   },
 ];
 
 const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
   title      = "Our Promise to You",
-  headline   = "We back every job\nwith real guarantees.",
+  headline   = "We back every detail\nwith real guarantees.",
   guarantees = DEFAULT_GUARANTEES,
-  ctaText    = "Schedule Service",
+  ctaText    = "Book a Detail",
   ctaLink    = "/contact",
 }) => {
   const trackEvent = useTrackEvent();
@@ -80,7 +80,6 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
     <section className={styles.section} aria-label="Our Guarantees">
       <div className={styles.container}>
 
-        {/* Left: headline + CTA */}
         <div className={styles.leftCol}>
           <span className={styles.eyebrow}>{title}</span>
           <h2 className={styles.headline}>
@@ -92,7 +91,8 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
             ))}
           </h2>
           <p className={styles.body}>
-            Every HVAC company in Central Texas makes promises. We back ours in writing — with flat-rate pricing, certified technicians, and a 1-year warranty on every repair we touch.
+            Every detailing shop in Central Texas makes promises. We back ours with transparent packages,
+            product-certified detailers, and a Satisfaction Re-Detail Guarantee on the work we complete.
           </p>
           <Link
             href={ctaLink}
@@ -117,11 +117,10 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
                 </svg>
               ))}
             </div>
-            <span className={styles.ratingText}>4.9 · 300+ verified Google reviews</span>
+            <span className={styles.ratingText}>4.9 · 1,600+ verified Google reviews</span>
           </div>
         </div>
 
-        {/* Right: guarantee cards */}
         <div className={styles.rightCol}>
           <div className={styles.grid}>
             {guarantees.map((g, i) => (

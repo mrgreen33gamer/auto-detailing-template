@@ -20,7 +20,7 @@ interface Variant3Props {
   title: string; cityName: string; slug: string; spot: string; formVariant: number;
 }
 
-const TIME_PREFS = ['Morning (7am–12pm)', 'Afternoon (12pm–5pm)', 'Evening (5pm–7pm)', 'Emergency – ASAP'];
+const TIME_PREFS = ['Morning (7am–12pm)', 'Afternoon (12pm–5pm)', 'Evening (5pm–7pm)', 'Maintenance Detail – ASAP'];
 
 const FIELDS = [
   { num: '01', id: 'v3-name',    name: 'name',    type: 'text',  label: 'Full Name',     icon: faUser,        placeholder: 'Jane Smith',           required: true  },
@@ -77,7 +77,7 @@ export default function Variant3({ title, cityName, slug, spot, formVariant }: V
               <polyline points="8 6 12 2 16 6"/><polyline points="8 18 12 22 16 18"/>
               <polyline points="6 8 2 12 6 16"/><polyline points="18 8 22 12 18 16"/>
             </svg>
-            Arctic Air HVAC
+            GlossLab Auto Detailing
           </span>
           <span className={styles.railDivider} aria-hidden="true" />
           <span className={styles.railLabel}>{cityName}, TX · Free Estimate</span>
@@ -155,7 +155,7 @@ export default function Variant3({ title, cityName, slug, spot, formVariant }: V
                       Describe the Problem
                     </label>
                     <textarea id="v3-message" name="message" className={`${styles.input} ${styles.textarea}`}
-                      placeholder="What's happening? AC won't cool? Furnace won't start? Any sounds or smells?" rows={3}
+                      placeholder="What's happening? AC won't cool? Ceramic Coating won't start? Any sounds or smells?" rows={3}
                       value={formData.message} onChange={handleChange} />
                   </div>
                 </motion.div>

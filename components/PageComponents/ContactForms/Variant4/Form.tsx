@@ -11,7 +11,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleCheck, faExclamationTriangle, faArrowRight, faArrowLeft,
-  faFan, faFire, faWrench, faFilter, faThermometerHalf, faWind, faBolt,
+  faCar, faShieldHalved, faSprayCanSparkles, faCouch, faLightbulb, faCalendarCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getJourneyContext } from '&/useJourneyTracker';
@@ -22,16 +22,15 @@ interface Variant4Props {
 }
 
 const SERVICES = [
-  { icon: faFan,             label: 'AC Repair',        sub: 'System not cooling, strange noises' },
-  { icon: faFire,            label: 'Heating / Furnace', sub: 'Heat not working, furnace issues' },
-  { icon: faWrench,          label: 'New Installation',  sub: 'Replace or add a new system' },
-  { icon: faFilter,          label: 'Duct Cleaning',     sub: 'Improve airflow & air quality' },
-  { icon: faThermometerHalf, label: 'Maintenance',       sub: 'Tune-up, inspection, seasonal' },
-  { icon: faWind,            label: 'Air Quality',       sub: 'Filters, purifiers, humidity' },
-  { icon: faBolt,            label: 'Emergency',         sub: 'System down, urgent repair needed' },
+  { icon: faCar,              label: 'Full Detail',           sub: 'Interior + exterior refresh' },
+  { icon: faShieldHalved,     label: 'Ceramic Coating',       sub: 'Multi-year paint protection' },
+  { icon: faSprayCanSparkles, label: 'Paint Correction',      sub: 'Swirl & haze removal' },
+  { icon: faCouch,            label: 'Interior Detail',       sub: 'Deep cabin cleaning' },
+  { icon: faLightbulb,        label: 'Headlight Restoration', sub: 'Clear cloudy lenses' },
+  { icon: faCalendarCheck,    label: 'Maintenance Detail',    sub: 'Keep-up packages' },
 ];
 
-const BUDGET_LABELS = ['Under $500', '$500–$1,500', '$1,500–$5,000', '$5,000–$10,000', '$10,000+'];
+const BUDGET_LABELS = ['Under $150', '$150–$300', '$300–$600', '$600–$1,500', '$1,500+'];
 
 const slideVariants = {
   enter:  (dir: number) => ({ x: dir > 0 ? 50 : -50, opacity: 0 }),
@@ -143,7 +142,7 @@ export default function Variant4({ title, cityName, slug, spot, formVariant }: V
                   </div>
                   <h3 className={styles.successTitle}>You're All Set!</h3>
                   <p className={styles.successText}>
-                    A licensed Arctic Air tech will reach out about your <strong>{selectedService}</strong> service.
+                    A GlossLab detailer will reach out about your <strong>{selectedService}</strong> service.
                   </p>
                   <div className={styles.successSummary}>
                     <div className={styles.summaryRow}><span>Service</span><span>{selectedService}</span></div>

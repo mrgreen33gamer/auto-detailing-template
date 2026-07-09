@@ -14,8 +14,8 @@ const BADGES = [
         <polyline points="9 12 11 14 15 10"/>
       </svg>
     ),
-    title: 'Licensed & Insured',
-    sub: 'TDLR Certified · $1M Coverage',
+    title: 'Bonded & Insured',
+    sub: 'Insured Certified · $1M Coverage',
   },
   {
     icon: (
@@ -24,8 +24,8 @@ const BADGES = [
         <polyline points="12 6 12 12 16 14"/>
       </svg>
     ),
-    title: 'Same-Day Service',
-    sub: 'Emergency calls welcome',
+    title: 'Flexible Booking',
+    sub: 'Drop-off slots available',
   },
   {
     icon: (
@@ -34,8 +34,8 @@ const BADGES = [
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
       </svg>
     ),
-    title: 'Flat-Rate Pricing',
-    sub: 'No surprises, ever',
+    title: 'Transparent Packages',
+    sub: 'Scope before we start',
   },
   {
     icon: (
@@ -43,7 +43,7 @@ const BADGES = [
         <polyline points="20 6 9 17 4 12"/>
       </svg>
     ),
-    title: 'NATE Certified',
+    title: 'Product-Certified',
     sub: 'Industry-trained techs',
   },
   {
@@ -52,7 +52,7 @@ const BADGES = [
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
       </svg>
     ),
-    title: '1-Year Warranty',
+    title: 'Re-Detail Guarantee',
     sub: 'Parts & labor guaranteed',
   },
   {
@@ -62,7 +62,7 @@ const BADGES = [
       </svg>
     ),
     title: '4.9★ Google Rating',
-    sub: '300+ verified reviews',
+    sub: '1,600+ verified reviews',
   },
 ];
 

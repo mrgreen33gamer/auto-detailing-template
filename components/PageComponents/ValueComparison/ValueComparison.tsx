@@ -14,14 +14,14 @@ interface ValueComparisonProps {
 }
 
 const DEFAULT_ROWS: ComparisonRow[] = [
-  { feature: 'Flat-rate pricing (no hourly billing)',  us: true,  others: false },
-  { feature: '1-Year parts & labor warranty',          us: true,  others: false },
-  { feature: 'Same-day emergency service',             us: true,  others: 'Sometimes' },
-  { feature: 'No service contracts required',          us: true,  others: false },
-  { feature: 'Licensed & insured technicians',         us: true,  others: true },
-  { feature: 'Upfront quote before work begins',       us: true,  others: false },
-  { feature: 'All major brands serviced',              us: true,  others: 'Sometimes' },
-  { feature: 'Satisfaction guarantee',                 us: true,  others: false },
+  { feature: 'Transparent package pricing',            us: true,  others: false },
+  { feature: 'Satisfaction Re-Detail Guarantee',       us: true,  others: false },
+  { feature: 'Product-certified detailers',            us: true,  others: 'Sometimes' },
+  { feature: 'No membership lock-in required',         us: true,  others: false },
+  { feature: 'Bonded & insured studio',                us: true,  others: true },
+  { feature: 'Paint inspection before coating',        us: true,  others: false },
+  { feature: 'Ceramic + correction capability',        us: true,  others: 'Sometimes' },
+  { feature: 'Aftercare guidance included',            us: true,  others: false },
 ];
 
 function StatusIcon({ value }: { value: boolean | string }) {
@@ -46,7 +46,7 @@ function StatusIcon({ value }: { value: boolean | string }) {
   return <span className={styles.iconMaybe}>{value}</span>;
 }
 
-export default function ValueComparison({ rows = DEFAULT_ROWS, title = 'Arctic Air vs. The Other Guys' }: ValueComparisonProps) {
+export default function ValueComparison({ rows = DEFAULT_ROWS, title = 'GlossLab vs. The Other Guys' }: ValueComparisonProps) {
   return (
     <section className={styles.section} aria-label="Value comparison">
       <div className={styles.container}>
@@ -75,7 +75,7 @@ export default function ValueComparison({ rows = DEFAULT_ROWS, title = 'Arctic A
                 <polyline points="18 8 22 12 18 16"/>
               </svg>
             </span>
-            Arctic Air
+            GlossLab
           </div>
           <div className={styles.colHeaderOthers}>Competitors</div>
         </div>

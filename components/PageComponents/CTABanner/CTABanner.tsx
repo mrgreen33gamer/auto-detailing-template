@@ -15,10 +15,10 @@ interface CTABannerProps {
 }
 
 export default function CTABanner({
-  headline      = "Ready to Stay Comfortable Year-Round?",
-  subline   = "Same-day appointments available. Flat-rate pricing — no hidden fees. Call now or grab a free estimate online.",
-  primaryText  = "Call (254) 900-1234",
-  primaryLink   = "tel:+12549001234",
+  headline      = "Ready for Gloss That Actually Lasts?",
+  subline   = "Book ceramic coating, paint correction, full detail, or interior care. Transparent packages — Satisfaction Re-Detail Guarantee.",
+  primaryText  = "Call (254) 950-1616",
+  primaryLink   = "tel:+12549501616",
   secondaryText = "Free Estimate",
   secondaryLink  = "/contact",
   spot = "CTABanner",
@@ -57,7 +57,7 @@ export default function CTABanner({
         >
           <span className={styles.eyebrow}>
             <span className={styles.eyebrowDot} />
-            Central Texas HVAC Experts Since 2010
+            Central Texas Detailing Experts Since 2015
           </span>
           <h2 className={styles.heading}>{headline}</h2>
           <p className={styles.sub}>{subline}</p>
