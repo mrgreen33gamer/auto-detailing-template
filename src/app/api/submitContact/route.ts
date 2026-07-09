@@ -198,7 +198,7 @@ export async function POST(req: NextRequest) {
     await sendEmail({
       to:          email,
       sender:      FROM_EMAIL,
-      subject:     `We received your inquiry, ${name}! — Scott Applications`,
+      subject:     `We received your inquiry, ${name}! — GlossLab Auto Detailing`,
       template_id: TEMPLATE_CUSTOMER_CONFIRMATION,
       template_data: {
         name,

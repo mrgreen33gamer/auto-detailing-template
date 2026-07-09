@@ -1,4 +1,4 @@
-# Arctic Air HVAC — UI Changes Package
+# GlossLab Auto Detailing — UI Changes Package
 
 ## How to apply
 

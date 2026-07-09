@@ -36,7 +36,7 @@ D:\SCOTT-APPS-SCOTT-APPLICATIONS\WEB-TEMPLATES\HVAC-TEMPLATE\PUBLIC
 |   |       hvac-filter.jpg
 |   |       maintenance-plan.jpg
 |   |       seer-rating.jpg
-|   |       smart-thermostat.jpg
+|   |       smart-finish package.jpg
 |   |       
 |   +---home
 |   |   +---featured-client
@@ -765,17 +765,17 @@ D:\SCOTT-APPS-SCOTT-APPLICATIONS\WEB-TEMPLATES\HVAC-TEMPLATE\SRC
     |   |   page.module.scss
     |   |   page.tsx
     |   |   
-    |   +---heat-pump-vs-traditional-hvac-texas
+    |   +---ceramic-coating-vs-wax
     |   |       layout.tsx
     |   |       page.module.scss
     |   |       page.tsx
     |   |       
-    |   +---how-often-should-you-replace-hvac-filter
+    |   +---how-often-detail-your-car-texas
     |   |       layout.tsx
     |   |       page.module.scss
     |   |       page.tsx
     |   |       
-    |   +---signs-ac-needs-replacement-waco-tx
+    |   +---paint-correction-explained
     |   |       layout.tsx
     |   |       page.module.scss
     |   |       page.tsx

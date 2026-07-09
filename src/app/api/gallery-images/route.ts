@@ -1,9 +1,9 @@
 // src/app/api/gallery-images/route.ts
 //
-// Returns a JSON list of image filenames from /public/projects/gallery/
+// Returns a JSON list of image filenames from /public/services/gallery/
 // so the GraphicDesignPanel can load them dynamically without any hardcoding.
 //
-// Drop images into /public/projects/gallery/ — they appear automatically.
+// Drop images into /public/services/gallery/ — they appear automatically.
 // Supported: .jpg .jpeg .png .webp .avif .gif
 
 import { NextResponse } from 'next/server';
