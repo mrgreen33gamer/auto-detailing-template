@@ -48,7 +48,7 @@ const faq = [
   },
   {
     question: 'How do I know if I need a repair or a full replacement?',
-    answer: "Our tech will tell you honestly after the diagnosis. If the repair cost exceeds 50% of a new door's cost and your door is over 15�20 years old, we'll recommend replacement — but we'll always show you the numbers and let you decide.",
+    answer: "Our tech will tell you honestly after the diagnosis. If the repair cost exceeds 50% of a new door's cost and your door is over 15–20 years old, we'll recommend replacement — but we'll always show you the numbers and let you decide.",
   },
 ];
 

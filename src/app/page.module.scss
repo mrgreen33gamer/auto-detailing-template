@@ -31,3 +31,13 @@
     margin-bottom: 2rem;
   }
 }
+
+/* === UNIQUENESS IDENTITY LAYER — auto-detailing-template === */
+.pageWrapper {
+  /* brand page rhythm */
+}
+.section {
+  padding-top: clamp(5.8rem, 6vw, 7.8rem) !important;
+  padding-bottom: clamp(5.8rem, 6vw, 7.8rem) !important;
+}
+/* end identity layer */

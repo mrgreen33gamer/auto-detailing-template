@@ -1,33 +1,30 @@
-// src/app/globalVariables.scss
-// GlossLab Auto Detailing — Brand Tokens
-//
-// THREE DISTINCT FONTS:
-//   $titleFont  → Barlow Condensed
-//   $headerFont → Outfit
-//   $textFont   → Inter
-
-$titleFont:  var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
-$headerFont: var(--font-outfit),           'Outfit',           sans-serif;
-$textFont:   var(--font-inter),            'Inter',            sans-serif;
+// Auto uniqueness tokens — gloss showroom
+$titleFont:  var(--font-title),  'Audiowide', sans-serif;
+$headerFont: var(--font-header), 'Montserrat', sans-serif;
+$textFont:   var(--font-body),   'Hind', sans-serif;
 
 $black:      #000000;
-$obsidian:   #0d1b2a;
-$blackflat:  #1a2a3a;
+$obsidian:   #0a0a0f;
+$blackflat:  #0a0a0f;
 $white:      #FFFFFF;
-$offwhite:   #f8fafc;
+$offwhite:   #f5f3ff;
 
-$darkgrey:   #7a9bb5;
-$grey:       #4a6a85;
-$lightgrey:  #c8d8e8;
+$darkgrey:   #94a3b8;
+$grey:       #64748b;
+$lightgrey:  #e2e8f0;
 
-// Brand Accent — indigo
-$orange:     #6366f1;
-$lightorange:#818cf8;
-$darkorange: #4338ca;
+$orange:     #a78bfa;
+$lightorange:#c4b5fd;
+$darkorange: #6d28d9;
 
 $green:      $orange;
 $lightgreen: $lightorange;
 $darkgreen:  $darkorange;
-$blue:       #1e6fa8;
+$blue:       #a78bfa;
+
+$radius-sm:  4px;
+$radius-md:  8px;
+$radius-lg:  12px;
+$radius-pill: 999px;
 
 $danger-red: #ef4444;

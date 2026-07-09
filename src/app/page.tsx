@@ -35,36 +35,42 @@ export default function HomePage() {
       title: "Full Detail",
       body: "Complete interior + exterior refresh — wash, decon, polish prep, vacuum, steam, and protection. Showroom results for daily drivers and weekend cars.",
       link: "/services/full-detail",
+      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faShieldHalved,
       title: "Ceramic Coating",
       body: "Professional multi-year ceramic coatings that lock in gloss, repel water, and stand up to Central Texas UV, heat, and road film.",
       link: "/services/ceramic-coating",
+      image: "/pages/home/services/service-2.jpg",
     },
     {
       icon: faSprayCanSparkles,
       title: "Paint Correction",
       body: "Single- and multi-stage correction to remove swirls, haze, and light scratches before coating — measured results, not marketing fluff.",
       link: "/services/paint-correction",
+      image: "/pages/home/services/service-3.jpg",
     },
     {
       icon: faCouch,
       title: "Interior Detail",
       body: "Deep vacuum, extraction, steam, leather/vinyl care, and odor treatment so the cabin feels as clean as the paint looks.",
       link: "/services/interior-detail",
+      image: "/pages/home/services/service-4.jpg",
     },
     {
       icon: faLightbulb,
       title: "Headlight Restoration",
       body: "Cut, polish, and UV-seal cloudy lenses so night visibility and curb appeal come back — without cheap temporary kits.",
       link: "/services/headlight-restoration",
+      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faCalendarCheck,
       title: "Maintenance Detail",
       body: "Keep ceramic-coated and daily-driven vehicles looking sharp with scheduled wash, decon, and interior top-ups.",
       link: "/services/maintenance-detail",
+      image: "/pages/home/services/service-2.jpg",
     },
   ];
 
@@ -180,13 +186,26 @@ export default function HomePage() {
 
   return (
     <main className={styles.pageWrapper}>
-
       <WelcomePage />
-
       <TrustBar
         headline="Waco's trusted auto detailing studio — product-certified, insured, and guarantee-backed"
       />
-
+      <div className={styles.section}>
+        <ServiceCardComponent
+          heading="Complete Auto Detailing Services"
+          cards={services}
+        />
+      </div>
+      <CTABanner
+        headline="Showroom Gloss. Real Protection."
+        subline="Ceramic coating, paint correction, and interior detail packages — mobile or in-bay across Central Texas."
+        primaryText="Call (254) 950-1616"
+        primaryLink="tel:+12549501616"
+        secondaryText="See Packages"
+        secondaryLink="/contact"
+      
+        imageSrc="/pages/home/welcome/hero-main.jpg"
+       />
       <div className={styles.section}>
         <ImpactMetrics
           title="Numbers That Speak for Us"
@@ -194,14 +213,6 @@ export default function HomePage() {
           cityName="Waco"
         />
       </div>
-
-      <div className={styles.section}>
-        <ServiceCardComponent
-          heading="Complete Auto Detailing Services"
-          cards={services}
-        />
-      </div>
-
       <div className={styles.section}>
         <WhyChooseUs
           cityName="Waco"
@@ -209,7 +220,39 @@ export default function HomePage() {
           title="What Makes GlossLab Different"
         />
       </div>
-
+      <div className={styles.section}>
+        <ProcessTimeline steps={processSteps} />
+      </div>
+      <div className={styles.section}>
+        <Testimonials testimonials={reviews} />
+      </div>
+      <div className={styles.section}>
+        <GuaranteeSection />
+      </div>
+      <div className={styles.section}>
+        <LocalServiceAreas
+          cityName="Waco"
+          areas={localAreas}
+          servicePath=""
+          title="Serving All of Central Texas"
+        />
+      </div>
+      <div className={styles.section}>
+        <WhatToExpect
+          sectionTitle="Every Visit, Every Time"
+          expectations={expectations}
+        />
+      </div>
+      <div className={styles.section}>
+        <FAQ
+          cityName="Waco"
+          faq={faq}
+          title="Auto Detailing Questions — Answered Straight"
+        />
+      </div>
+      <div className={styles.section}>
+        <BlogPreviewGrid />
+      </div>
       <div className={styles.section}>
         <Variant4
           title="Book a Detail or Free Quote"
@@ -219,56 +262,6 @@ export default function HomePage() {
           formVariant={2}
         />
       </div>
-
-      <div className={styles.section}>
-        <ProcessTimeline steps={processSteps} />
-      </div>
-
-      <div className={styles.section}>
-        <Testimonials testimonials={reviews} />
-      </div>
-
-      <div className={styles.section}>
-        <GuaranteeSection />
-      </div>
-
-      <CTABanner
-        headline="Ready for Gloss That Actually Lasts?"
-        subline="Ceramic coatings, paint correction, full details, and interior care across Waco, Hewitt, Woodway, Temple, and Central Texas. Satisfaction Re-Detail Guarantee."
-        primaryText="Call (254) 950-1616"
-        primaryLink="tel:+12549501616"
-        secondaryText="Book Online"
-        secondaryLink="/contact"
-      />
-
-      <div className={styles.section}>
-        <LocalServiceAreas
-          cityName="Waco"
-          areas={localAreas}
-          servicePath=""
-          title="Serving All of Central Texas"
-        />
-      </div>
-
-      <div className={styles.section}>
-        <WhatToExpect
-          sectionTitle="Every Visit, Every Time"
-          expectations={expectations}
-        />
-      </div>
-
-      <div className={styles.section}>
-        <FAQ
-          cityName="Waco"
-          faq={faq}
-          title="Auto Detailing Questions — Answered Straight"
-        />
-      </div>
-
-      <div className={styles.section}>
-        <BlogPreviewGrid />
-      </div>
-
     </main>
   );
 }

@@ -19,7 +19,7 @@ const ALL_POSTS: BlogPost[] = [
     category: 'Protection',
     date:     'July 3, 2026',
     readTime: 7,
-    imageSrc: '/pages/blogs/heat-pump.jpg',
+    imageSrc: '/pages/home/services/service-1.jpg',
     imageAlt: 'Ceramic coating vs wax comparison for Waco TX vehicles',
     featured: true,
   },
@@ -30,7 +30,7 @@ const ALL_POSTS: BlogPost[] = [
     category: 'Maintenance',
     date:     'June 24, 2026',
     readTime: 6,
-    imageSrc: '/pages/blogs/energy-savings.jpg',
+    imageSrc: '/pages/home/welcome/after.jpg',
     imageAlt: 'How often to detail your car in Texas heat guide',
   },
   {
@@ -40,7 +40,7 @@ const ALL_POSTS: BlogPost[] = [
     category: 'Paint Care',
     date:     'June 15, 2026',
     readTime: 8,
-    imageSrc: '/pages/blogs/ac-replacement.jpg',
+    imageSrc: '/pages/home/welcome/hero-main.jpg',
     imageAlt: 'Paint correction explained for swirl removal and gloss',
   },
 ];
