@@ -129,18 +129,16 @@ function ToggleSwitch({
 
 function PanelChrome({ children }: { children: React.ReactNode }) {
   return (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} ${styles.shinePanel}`}>
       <div className={styles.panelBezel} aria-hidden="true">
-        <span className={styles.screw} />
-        <span className={styles.screw} />
-        <span className={styles.panelTitle}>CONTROL</span>
-        <span className={styles.screw} />
-        <span className={styles.screw} />
+        <span className={styles.shineGem} />
+        <span className={styles.panelTitle}>CERAMIC COAT LAB</span>
+        <span className={styles.shineGem} />
       </div>
       <div className={styles.panelStatus} aria-hidden="true">
         <span className={styles.statusLed} />
-        <span className={styles.statusText}>SYSTEM ACTIVE</span>
-        <span className={styles.statusTime}>LIVE</span>
+        <span className={styles.statusText}>SHINE METERS · ACTIVE</span>
+        <span className={styles.statusTime}>GLOSS</span>
       </div>
       <div className={styles.panelBody}>{children}</div>
     </div>

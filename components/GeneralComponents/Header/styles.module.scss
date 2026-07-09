@@ -248,3 +248,20 @@
 }
 
 /* end identity layer */
+
+/* === HEADER PATTERN UNIQUENESS — auto-detailing-template === */
+.header,
+.shell,
+.bar,
+.navShell,
+.root {
+  // best-effort: classes vary; also target common wrappers
+}
+
+.header {
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba($white, 0.015) 3px, rgba($white, 0.015) 4px) !important;
+  border-bottom: 1px solid rgba($orange, 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+/* end header pattern */
