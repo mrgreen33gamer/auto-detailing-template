@@ -133,7 +133,7 @@ export default function AdminLoginPage() {
     <div className={styles.page}>
       <div className={styles.card}>
         <div className={styles.brand}>
-          <span className={styles.eyebrow}>Scott Applications</span>
+          <span className={styles.eyebrow}>GlossLab Auto Detailing</span>
           <h1 className={styles.title}>Admin</h1>
         </div>
 
@@ -153,7 +153,7 @@ export default function AdminLoginPage() {
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
-                placeholder="Joshua Feliciano"
+                placeholder="Jade Nguyen"
                 autoComplete="name"
                 disabled={loading}
               />
@@ -168,7 +168,7 @@ export default function AdminLoginPage() {
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              placeholder="admin@scottapps.com"
+              placeholder="admin@glosslabdetail.com"
               autoComplete="email"
               disabled={loading}
             />

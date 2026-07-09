@@ -24,10 +24,10 @@ function ParticleCanvas() {
       pts.forEach(p => {
         ctx.save(); ctx.globalAlpha = p.o;
         if (p.flake) {
-          ctx.strokeStyle = '#16def9'; ctx.lineWidth = 0.6;
+          ctx.strokeStyle = '#6366f1'; ctx.lineWidth = 0.6;
           ctx.translate(p.x, p.y);
           for (let i = 0; i < 6; i++) { ctx.rotate(Math.PI / 3); ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, p.r * 3.2); ctx.stroke(); }
-        } else { ctx.fillStyle = '#16def9'; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill(); }
+        } else { ctx.fillStyle = '#6366f1'; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill(); }
         ctx.restore();
         p.x += p.vx; p.y += p.vy;
         if (p.y > canvas.height + 10) { p.y = -10; p.x = Math.random() * canvas.width; }
@@ -70,7 +70,7 @@ function TempMeter() {
   );
 }
 
-const CHIPS = ['Same-Day Service', 'No Contracts', 'NATE Certified', '15+ Yrs Local', '1-Yr Warranty'];
+const CHIPS = ['Ceramic Coatings', 'Paint Correction', 'Product-Certified', '11+ Yrs Local', 'Re-Detail Guarantee'];
 
 export default function WelcomePage() {
   return (
@@ -86,31 +86,30 @@ export default function WelcomePage() {
             initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}>
             <span className={styles.badgeDot} />
-            Waco&apos;s Most Trusted HVAC — Since 2010
+            Waco&apos;s Trusted Auto Detailing Studio — Since 2015
           </motion.div>
 
           <motion.h1 className={styles.headline}
             initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}>
-            Stay Cool.<br />Stay Warm.<br />
-            <span className={styles.accentLine}>Arctic Air.</span>
+            Ceramic Gloss.<br />Interior Care.<br />
+            <span className={styles.accentLine}>GlossLab.</span>
           </motion.h1>
 
           <motion.p className={styles.sub}
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.22 }}>
-            Flat-rate pricing. Same-day service. 1-year warranty on every repair.
-            Serving Waco and Central Texas with licensed, NATE-certified technicians.
+            Ceramic Coatings · Interior Detail · Paint Correction. Transparent packages. Satisfaction Re-Detail Guarantee. Serving Waco and Central Texas with product-certified detailers.
           </motion.p>
 
           <motion.div className={styles.ctaRow}
             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.34 }}>
-            <a href="tel:+12549001234" className={styles.ctaPrimary}>
+            <a href="tel:+12549501616" className={styles.ctaPrimary}>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.17 12a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              Call (254) 900-1234
+              Call (254) 950-1616
             </a>
             <Link href="/contact" className={styles.ctaSecondary}>
               Free Estimate
@@ -155,12 +154,12 @@ export default function WelcomePage() {
             </svg>
           </motion.div>
 
-          {/* ── stat card: systems serviced — upper left ── */}
+          {/* ── stat card: Vehicles Detailed — upper left ── */}
           <motion.div className={`${styles.statCard} ${styles.sc1}`}
             initial={{ opacity: 0, y: -10, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 1.05, type: 'spring', stiffness: 240, damping: 18 }}>
-            <span className={styles.scNum}>2,400+</span>
-            <span className={styles.scLbl}>Systems Serviced</span>
+            <span className={styles.scNum}>9,000+</span>
+            <span className={styles.scLbl}>Vehicles Detailed</span>
           </motion.div>
 
           {/* ── stat card: rating — upper right ── */}

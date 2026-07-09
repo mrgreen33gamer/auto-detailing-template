@@ -86,7 +86,7 @@ const CookieBanner: React.FC = () => {
                 <p className={styles.title} id="cookie-banner-title">
                   Cookie Preferences
                 </p>
-                <p className={styles.sub}>Arctic Air Template</p>
+                <p className={styles.sub}>GlossLab Template</p>
               </div>
             </div>
 

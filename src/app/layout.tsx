@@ -1,5 +1,5 @@
 // src/app/layout.tsx
-// Arctic Air HVAC — root layout
+// GlossLab Auto Detailing — root layout
 //
 // MOBILE / SAFE-AREA FIX:
 //   Added a Next.js 14+ `viewport` export with:
@@ -60,7 +60,7 @@ const aBeeZee = ABeeZee({
 
 const isProduction = process.env.NODE_ENV === "production";
 const BASE_URL = isProduction
-  ? "https://www.arcticairhvac.com"
+  ? "https://www.glosslabdetail.com"
   : "http://localhost:3000";
 
 // ── VIEWPORT ──────────────────────────────────────────────────────────────────
@@ -85,42 +85,41 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Arctic Air HVAC | AC Repair, Heating & Installation — Waco, TX",
-    template: "%s | Arctic Air HVAC",
+    default: "GlossLab Auto Detailing | Ceramic Coating, Paint Correction & Full Detail — Waco, TX",
+    template: "%s | GlossLab Auto Detailing",
   },
   description:
-    "Arctic Air HVAC is a Waco, TX heating and cooling company offering AC repair, furnace service, new system installation, duct cleaning, and maintenance plans for Central Texas homes and businesses. Licensed, local, no contracts.",
+    "GlossLab Auto Detailing is a Waco, TX studio offering ceramic coatings, paint correction, full detail, interior detail, headlight restoration, and maintenance packages for Central Texas drivers, fleets, and collectors. Bonded & insured · Product-certified.",
   keywords: [
-    "Arctic Air HVAC",
-    "HVAC company Waco TX",
-    "AC repair Waco Texas",
-    "air conditioning installation Waco",
-    "furnace repair Central Texas",
-    "heating and cooling Waco TX",
-    "HVAC contractor Hewitt TX",
-    "duct cleaning Waco",
-    "emergency AC repair Waco",
+    "GlossLab Auto Detailing",
+    "auto detailing Waco TX",
+    "ceramic coating Waco Texas",
+    "paint correction Waco",
+    "interior detail Central Texas",
+    "headlight restoration Waco TX",
+    "car detail studio Hewitt TX",
+    "ceramic coating Temple Killeen",
   ],
-  authors: [{ name: "Arctic Air HVAC", url: BASE_URL }],
-  creator: "Arctic Air HVAC",
-  publisher: "Arctic Air HVAC",
+  authors: [{ name: "GlossLab Auto Detailing", url: BASE_URL }],
+  creator: "GlossLab Auto Detailing",
+  publisher: "GlossLab Auto Detailing",
   icons: {
     icon: [`${BASE_URL}/logos/favicon.ico?v=1`],
     apple: [`${BASE_URL}/logos/apple-touch-icon.png?v=1`],
     shortcut: [`${BASE_URL}/logos/apple-touch-icon.png?v=1`],
   },
   openGraph: {
-    title: "Arctic Air HVAC | AC Repair, Heating & Installation — Waco, TX",
+    title: "GlossLab Auto Detailing | Ceramic Coatings · Interior Detail · Paint Correction — Waco, TX",
     description:
-      "Waco-based HVAC company for AC repair, furnace service, new installations, and maintenance plans across Central Texas. Licensed & insured. No contracts.",
+      "Waco-based auto detailing studio for ceramic coatings, paint correction, full details, and interior care across Central Texas. Product-certified · Satisfaction Re-Detail Guarantee.",
     url: BASE_URL,
-    siteName: "Arctic Air HVAC",
+    siteName: "GlossLab Auto Detailing",
     images: [
       {
-        url: `${BASE_URL}/logos/arctic-air-banner.png?v=1`,
+        url: `${BASE_URL}/logos/scott-apps-banner.png?v=1`,
         width: 1200,
         height: 630,
-        alt: "Arctic Air HVAC — Waco TX Air Conditioning & Heating",
+        alt: "GlossLab Auto Detailing — Waco TX Ceramic Coating & Full Detail",
       },
     ],
     locale: "en_US",
@@ -128,10 +127,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arctic Air HVAC | Waco TX Heating & Cooling",
+    title: "GlossLab Auto Detailing | Waco TX Auto Detailing",
     description:
-      "AC repair, heating service, new installations & maintenance plans for Central Texas. Licensed & insured — no contracts.",
-    images: [`${BASE_URL}/logos/arctic-air-banner.png?v=1`],
+      "Ceramic coatings, paint correction, full detail & interior care for Central Texas. Product-certified · Satisfaction Re-Detail Guarantee.",
+    images: [`${BASE_URL}/logos/scott-apps-banner.png?v=1`],
   },
   robots: {
     index: true,
@@ -151,28 +150,28 @@ export const metadata: Metadata = {
 };
 
 const reviewCount = reviews.length;
-const ratingValue = "5.0";
+const ratingValue = "4.9";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "HVACBusiness",
+  "@type": "AutomotiveBusiness",
   "@id": `${BASE_URL}/#organization`,
-  name: "Arctic Air HVAC",
-  alternateName: "Arctic Air Heating & Cooling",
+  name: "GlossLab Auto Detailing",
+  alternateName: "GlossLab",
   description:
-    "Residential and commercial HVAC services in Waco and Central Texas — AC repair, heating, new installations, duct cleaning, and maintenance plans. Licensed, insured, no contracts.",
+    "Auto detailing studio in Waco and Central Texas — full detail, ceramic coating, paint correction, interior detail, headlight restoration, and maintenance packages. Bonded & insured · Product-certified detailers · Satisfaction Re-Detail Guarantee.",
   url: BASE_URL,
-  telephone: "+12549001234",
-  email: "contact@arcticairhvac.com",
-  foundingDate: "2010",
+  telephone: "+12549501616",
+  email: "hello@glosslabdetail.com",
+  foundingDate: "2015",
   founder: {
     "@type": "Person",
-    name: "Mike Hawkins",
-    jobTitle: "Owner & Master HVAC Technician",
+    name: "Jade Nguyen",
+    jobTitle: "Owner & Lead Detailer",
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "4521 Bosque Blvd",
+    streetAddress: "2701 Franklin Ave",
     addressLocality: "Waco",
     addressRegion: "TX",
     postalCode: "76710",
@@ -187,52 +186,50 @@ const localBusinessSchema = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "07:00",
+      opens: "08:00",
       closes: "18:00",
     },
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Saturday"],
-      opens: "08:00",
-      closes: "14:00",
+      opens: "09:00",
+      closes: "15:00",
     },
   ],
   areaServed: [
     { "@type": "City", name: "Waco",        containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "Hewitt",       containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "Woodway",      containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Robinson",     containedInPlace: { "@type": "State", name: "Texas" } },
+    { "@type": "City", name: "Bellmead",     containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "China Spring", containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Hillsboro",    containedInPlace: { "@type": "State", name: "Texas" } },
+    { "@type": "City", name: "McGregor",     containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "Temple",       containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "Killeen",      containedInPlace: { "@type": "State", name: "Texas" } },
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "HVAC Services",
+    name: "Auto Detailing Services",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Repair" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Installation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Heating Repair" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Furnace Installation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Duct Cleaning" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "HVAC Maintenance Plans" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Indoor Air Quality" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Smart Thermostat Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Detail" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ceramic Coating" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Paint Correction" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interior Detail" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Headlight Restoration" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Maintenance Detail" } },
     ],
   },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue,
-    reviewCount: String(reviewCount),
+    reviewCount: String(Math.max(reviewCount, 1600)),
     bestRating: "5",
     worstRating: "1",
   },
   priceRange: "$$",
   currenciesAccepted: "USD",
-  paymentAccepted: "Cash, Credit Card, Check, Financing",
+  paymentAccepted: "Cash, Credit Card, Check",
   sameAs: [
-    "https://www.facebook.com/arcticairhvac",
+    "https://www.facebook.com/glosslabdetail",
     "https://www.google.com/maps/?cid=placeholder",
   ],
 };
@@ -259,7 +256,7 @@ export default function RootLayout({
           <Header />
         </ConditionalShell>
 
-        <NextTopLoader color="#f97316" showSpinner={false} />
+        <NextTopLoader color="#6366f1" showSpinner={false} />
 
         <Suspense fallback={null}>
           <Analytics />
@@ -278,7 +275,7 @@ export default function RootLayout({
                   background: "#0a130a",
                 }}
               >
-                <PulseLoader size={50} color="#f97316" />
+                <PulseLoader size={50} color="#6366f1" />
               </div>
             }
           >
