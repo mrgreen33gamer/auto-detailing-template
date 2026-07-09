@@ -1,5 +1,5 @@
 // src/app/contact/page.tsx
-// Arctic Air HVAC — Contact Page (unique build, not just a form import)
+// GlossLab Auto Detailing — Contact Page (unique build, not just a form import)
 // FIXED: Added useTrackEvent for:
 //   - phone_click  on the Phone & Text info card link
 //   - email_click  on the Email info card link
@@ -19,36 +19,36 @@ import CTABanner from '#/PageComponents/CTABanner/CTABanner';
 
 // ── Service options ────────────────────────────────────────────────────────────
 const SERVICES = [
-  'AC Repair', 'Heating / Furnace Repair', 'New System Installation',
-  'Seasonal Maintenance / Tune-Up', 'Duct Cleaning', 'Indoor Air Quality',
-  'Emergency Service', 'Other / Not Sure',
+  'Full Detail', 'Ceramic Coating', 'Paint Correction',
+  'Interior Detail', 'Headlight Restoration', 'Maintenance Detail',
+  'Express Detail', 'Other / Not Sure',
 ];
 
 // ── FAQ data ──────────────────────────────────────────────────────────────────
 const faq = [
   {
-    question: "What's the fastest way to reach you for an emergency?",
-    answer: "Call us directly at (254) 900-1234. We answer 7 days a week including evenings. For a genuine HVAC emergency in Central Texas heat or cold, call — don't wait on a form response.",
+    question: "What's the fastest way to reach you for an priority?",
+    answer: "Call us directly at (254) 950-1616. We answer 7 days a week including evenings. For a genuine detailing priority in Central Texas, call — don't wait on a form response.",
   },
   {
     question: 'How quickly can someone come out?',
-    answer: "Same-day service is available most days during business hours. Evening and weekend emergency calls are dispatched within 1–2 hours. We'll give you an honest ETA when you call — not a 4-hour window.",
+    answer: "Same-week booking is available most days during business hours. Evening and weekend priority calls are dispatched within 1–2 hours. We'll give you an honest ETA when you call — not a 4-hour window.",
   },
   {
     question: 'Do you charge for the diagnostic visit?',
-    answer: 'We charge a standard diagnostic fee for non-emergency visits, which is waived when you proceed with the repair. Emergency dispatch calls have a separate fee. We\'ll confirm the amount when you schedule.',
+    answer: 'We charge a standard diagnostic fee for non-priority visits, which is waived when you proceed with the repair. Priority dispatch calls have a separate fee. We\'ll confirm the amount when you schedule.',
   },
   {
-    question: 'Do you work on commercial HVAC systems?',
-    answer: 'Yes — light commercial HVAC for restaurants, offices, retail spaces, and small warehouses is within our scope. Call to discuss your specific system and location.',
+    question: 'Do you work on commercial detailing systems?',
+    answer: 'Yes — light commercial detailing for restaurants, offices, retail spaces, and small warehouses is within our scope. Call to discuss your specific system and location.',
   },
   {
     question: 'What areas do you serve?',
-    answer: 'Waco, Hewitt, Woodway, Robinson, China Spring, Temple, Killeen, Hillsboro, Valley Mills, and most of Central Texas within about 60 miles of Waco. Call us — we probably cover your area.',
+    answer: 'Waco, Hewitt, Woodway, McGregor, China Spring, Bellmead, Temple, Killeen, and most of Central Texas within about 60 miles of Waco. Call us — we probably cover your area.',
   },
   {
     question: 'How do I know if I need a repair or a full replacement?',
-    answer: "Our tech will tell you honestly after the diagnosis. If the repair cost exceeds 50% of a new system's cost and your unit is over 10 years old, we'll recommend replacement — but we'll always show you the numbers and let you decide.",
+    answer: "Our tech will tell you honestly after the diagnosis. If the repair cost exceeds 50% of a new door's cost and your door is over 15�20 years old, we'll recommend replacement — but we'll always show you the numbers and let you decide.",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}>
             Let&apos;s Get Your<br />
-            <span className={styles.heroAccent}>HVAC Fixed</span>
+            <span className={styles.heroAccent}>Power Restored</span>
           </motion.h1>
           <motion.p className={styles.heroSub}
             initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
@@ -141,8 +141,8 @@ export default function ContactPage() {
                     </svg>
                   ),
                   label:     'Phone & Text',
-                  value:     '(254) 900-1234',
-                  href:      'tel:+12549001234',
+                  value:     '(254) 950-1616',
+                  href:      'tel:+12549501616',
                   eventType: 'phone_click' as const,
                   eventLabel: 'Contact Page Phone',
                 },
@@ -154,8 +154,8 @@ export default function ContactPage() {
                     </svg>
                   ),
                   label:     'Email',
-                  value:     'contact@arcticairhvac.com',
-                  href:      'mailto:contact@arcticairhvac.com',
+                  value:     'hello@glosslabdetail.com',
+                  href:      'mailto:hello@glosslabdetail.com',
                   eventType: 'email_click' as const,
                   eventLabel: 'Contact Page Email',
                 },
@@ -167,7 +167,7 @@ export default function ContactPage() {
                     </svg>
                   ),
                   label:     'Address',
-                  value:     '4521 Bosque Blvd, Waco TX 76710',
+                  value:     '2701 Franklin Ave, Waco TX 76701',
                   href:      'https://maps.google.com/?q=4521+Bosque+Blvd+Waco+TX+76710',
                   eventType: 'click' as const,
                   eventLabel: 'Contact Page Address',
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     </svg>
                   ),
                   label:     'Hours',
-                  value:     'Mon–Fri 7am–6pm · Sat 8am–2pm · Emergency 24/7',
+                  value:     'Mon–Fri 7am–6pm · Sat 8am–2pm · Priority 24/7',
                   href:      null,
                   eventType: null,
                   eventLabel: null,
@@ -216,12 +216,12 @@ export default function ContactPage() {
 
             {/* Trust callouts */}
             <div className={styles.trustBlock}>
-              <p className={styles.trustHeading}>Why homeowners choose Arctic Air</p>
+              <p className={styles.trustHeading}>Why homeowners choose GlossLab Auto Detailing</p>
               {[
                 'Flat-rate pricing — written quote before we start',
                 '1-year parts & labor warranty on every repair',
-                'NATE-certified, TDLR-licensed technicians only',
-                'Same-day service, 7 days a week',
+                'product-certified technicians only',
+                'Same-week booking, 7 days a week',
                 'No contracts, no lock-in — ever',
               ].map(t => (
                 <div key={t} className={styles.trustItem}>
@@ -248,8 +248,8 @@ export default function ContactPage() {
                   </div>
                   <h2 className={styles.successTitle}>Request Received!</h2>
                   <p className={styles.successText}>
-                    A licensed Arctic Air technician will reach out shortly — usually within one business day. For urgent needs, call us at{' '}
-                    <a href="tel:+12549001234">(254) 900-1234</a>.
+                    A licensed GlossLab Auto Detailing detailing technician will reach out shortly — usually within one business day. For urgent needs, call us at{' '}
+                    <a href="tel:+12549501616">(254) 950-1616</a>.
                   </p>
                   <div className={styles.successMeta}>
                     <span>✓ Flat-rate quote</span>
@@ -293,7 +293,7 @@ export default function ContactPage() {
                     <span className={styles.urgencyDot} />
                     {urgent
                       ? '🔴 Marked as urgent — we\'ll prioritize your request'
-                      : 'Mark as urgent or emergency'}
+                      : 'Mark as urgent or priority'}
                   </button>
 
                   <form className={styles.form} onSubmit={handleSubmit} noValidate>
@@ -371,14 +371,14 @@ export default function ContactPage() {
                     <p className={styles.formNote}>
                       Or call/text us directly:{' '}
                       <a
-                        href="tel:+12549001234"
+                        href="tel:+12549501616"
                         onClick={() => trackEvent({
                           eventType:    'phone_click',
                           elementLabel: 'Contact Page Form Note Phone',
                           section:      'contact-page-form',
                         })}
                       >
-                        (254) 900-1234
+                        (254) 950-1616
                       </a>{' '}
                       — we answer 7 days a week.
                     </p>
@@ -399,11 +399,11 @@ export default function ContactPage() {
       {/* ── CTA Banner ───────────────────────────────────────────────────── */}
       <CTABanner
         headline="Need Us Right Now?"
-        subline="Call (254) 900-1234 — we answer 7 days a week, evenings included. Emergency service available across Central Texas."
-        primaryText="Call (254) 900-1234"
-        primaryLink="tel:+12549001234"
+        subline="Call (254) 950-1616 — we answer 7 days a week, evenings included. Priority service available across Central Texas."
+        primaryText="Call (254) 950-1616"
+        primaryLink="tel:+12549501616"
         secondaryText="Send a Text"
-        secondaryLink="sms:+12549001234"
+        secondaryLink="sms:+12549501616"
       />
 
     </main>

@@ -12,19 +12,19 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hvac-pro-template.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://auto-detailing-template.vercel.app';
 const url = `${BASE_URL}/services`;
 
 export const metadata: Metadata = {
-  title: "Services | Web Design, Software, Branding & Marketing | Scott Applications",
+  title: "Services | Web Design, Software, Branding & Marketing | GlossLab",
   description:
-    "Scott Applications offers custom web design, software engineering, graphic design, and digital marketing for Central Texas businesses. Fixed pricing, no contracts, you own everything.",
+    "GlossLab offers custom web design, software engineering, graphic design, and digital marketing for Central Texas businesses. Fixed pricing, no contracts, you own everything.",
   keywords: [
     "web design Waco TX",
     "custom software Central Texas",
     "graphic design Waco",
     "digital marketing Waco TX",
-    "Scott Applications services",
+    "GlossLab services",
     "digital agency Waco Texas",
     "website development Central Texas",
     "local SEO Waco",
@@ -33,23 +33,23 @@ export const metadata: Metadata = {
     canonical: url,
   },
   openGraph: {
-    title: "Services | Web Design, Software, Branding & Marketing | Scott Applications",
+    title: "Services | Web Design, Software, Branding & Marketing | GlossLab",
     description:
       "Custom websites, software, branding, and marketing for Central Texas businesses. Fixed price, no contracts, direct developer access.",
     url,
-    siteName: "Scott Applications",
+    siteName: "GlossLab",
     locale: "en_US",
     type: "website",
     images: [
       {
         url: `${BASE_URL}/logos/scott-apps-banner.png?v=3`,
-        alt: "Scott Applications — Services for Central Texas Businesses",
+        alt: "GlossLab — Services for Central Texas Businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services | Scott Applications",
+    title: "Services | GlossLab",
     description:
       "Web design, custom software, graphic design, and digital marketing for Central Texas. Fixed pricing, full ownership.",
     images: [`${BASE_URL}/logos/scott-apps-banner.png?v=3`],
@@ -60,12 +60,12 @@ export const metadata: Metadata = {
 const offerCatalogSchema = {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
-  name: "Scott Applications — Digital Services",
+  name: "GlossLab — Digital Services",
   description:
     "Full-service digital agency offerings for Central Texas businesses: web design, custom software, graphic design, and digital marketing.",
   provider: {
     "@type": "LocalBusiness",
-    name: "Scott Applications",
+    name: "GlossLab",
     url: BASE_URL,
     telephone: "+12549002520",
     address: {

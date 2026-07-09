@@ -2,16 +2,16 @@
 // src/app/industries/layout.tsx
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hvac-pro-template.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://auto-detailing-template.vercel.app';
 const url      = `${BASE_URL}/industries`;
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | Web Design & Marketing for Texas Businesses | Scott Applications",
+  title: "Industries We Serve | Web Design & Marketing for Texas Businesses | GlossLab",
   description:
-    "Scott Applications builds industry-specific websites, software, and marketing for automotive, HVAC, construction, roofing, electrical, plumbing, finance, manufacturing, aviation, and oil & gas businesses across Central Texas.",
+    "GlossLab builds industry-specific websites, software, and marketing for automotive, detailing, construction, roofing, electrical, plumbing, finance, manufacturing, aviation, and luxury & collectors businesses across Central Texas.",
   keywords: [
     "industry web design Waco TX",
-    "HVAC website design Texas",
+    "detailing website design Texas",
     "construction website Central Texas",
     "roofing marketing Waco",
     "automotive web design Texas",
@@ -21,22 +21,22 @@ export const metadata: Metadata = {
     "oil gas web design Texas",
     "finance website Waco TX",
     "industry specific web design",
-    "Scott Applications industries",
+    "GlossLab industries",
   ],
   alternates: { canonical: url },
   openGraph: {
-    title: "Industries We Serve | Scott Applications — Waco, TX",
+    title: "Industries We Serve | GlossLab — Waco, TX",
     description:
       "Industry-specific websites, software, and marketing for 10+ verticals across Central Texas. Built for how your industry actually works.",
     url,
-    siteName: "Scott Applications",
+    siteName: "GlossLab",
     locale: "en_US",
     type: "website",
-    images: [{ url: `${BASE_URL}/logos/scott-apps-banner.png`, alt: "Scott Applications — Industries Served" }],
+    images: [{ url: `${BASE_URL}/logos/scott-apps-banner.png`, alt: "GlossLab — Industries Served" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Industries We Serve | Scott Applications",
+    title: "Industries We Serve | GlossLab",
     description: "Industry-specific web design, software & marketing for Texas businesses across 10+ verticals.",
     images: [`${BASE_URL}/logos/scott-apps-banner.png`],
   },
@@ -57,10 +57,10 @@ const serviceSchema = {
   "@type": "Service",
   name: "Industry-Specific Digital Services — Waco TX",
   description:
-    "Scott Applications provides industry-tailored web design, custom software, and digital marketing for automotive, HVAC, construction, roofing, electrical, plumbing, finance, manufacturing, aviation, and oil & gas businesses across Central Texas.",
+    "GlossLab provides industry-tailored web design, custom software, and digital marketing for automotive, detailing, construction, roofing, electrical, plumbing, finance, manufacturing, aviation, and luxury & collectors businesses across Central Texas.",
   provider: {
     "@type": "LocalBusiness",
-    name: "Scott Applications",
+    name: "GlossLab",
     url: BASE_URL,
     telephone: "+12549002520",
     address: {
