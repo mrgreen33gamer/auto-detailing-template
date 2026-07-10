@@ -117,6 +117,23 @@ deleting image assets is out of scope for this pass).
 - `git log --oneline` shows 398feb5 + new commits; push; re-screenshot the live Vercel URL after
   deploy to confirm parity with local.
 
+## Addendum (post-approval)
+
+Two items landed already, ahead of the implementation plan, discovered while auditing the
+service-areas page at the user's request:
+
+- **Services grid image dedup** (scope item 2) — done in commit `3a069bc`.
+- **Garage-door content leak** (not in original scope) — several `service-areas` city
+  descriptions/highlights and `src/app/llms.txt/route.ts` still described the business as a
+  garage-door company ("spring & cable repair", "Door System upgrades", "All Garage Door
+  Services") — leftover from the fork. Fixed in commit `6dcebc8`.
+- Investigated the service-areas page rendering "blank" in full-page screenshots — confirmed via
+  forced scroll that this is a `whileInView` scroll-reveal working as intended, not a real bug for
+  actual visitors. Not fixed (nothing to fix); noted here so it isn't re-investigated later.
+
+Remaining from the original scope: the Coating Cross-Section hero visual (scope item 1) and the
+final push (scope item 3).
+
 ## Non-goals
 
 - No changes to other templates in the repo family.
