@@ -1,7 +1,10 @@
 // _archetype-library/hero-g-dashboard/Component.tsx
 //
-// Hero G: Live Control Panel — industrial chrome, counting gauges from props,
-// toggle switches, small meters. Framer-motion for counter animations.
+// Hero G: Live Control Panel — reskinned for GlossLab as a Ceramic Coat Lab
+// coating cross-section: a layered slab diagram (Primer / Base Paint /
+// Ceramic + Clear Gloss) with a shimmer sweep and rolling water-bead
+// animation, plus a plain stat strip (no gauge bars — they don't map to
+// non-percentage stats like "Mobile: Yes").
 'use client';
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
@@ -9,7 +12,19 @@ import Link from 'next/link';
 import { PhoneIcon, ChevronIcon, CheckIcon } from './_shared/icons';
 import styles from './styles.module.scss';
 
-function parseGaugeValue(raw: string): { numeric: number | null; prefix: string; suffix: string } {
+interface CoatingLayer {
+  key:     string;
+  label:   string;
+  sub:     string;
+  accent?: boolean;
+}
+
+interface HeroStat {
+  label: string;
+  value: string;
+}
+
+function parseStatValue(raw: string): { numeric: number | null; prefix: string; suffix: string } {
   const match = raw.match(/^([^0-9.-]*)(-?[\d.]+)(.*)$/);
   if (!match) return { numeric: null, prefix: '', suffix: raw };
   const num = parseFloat(match[2]);
@@ -19,14 +34,12 @@ function parseGaugeValue(raw: string): { numeric: number | null; prefix: string;
 
 function CountingValue({
   value,
-  unit,
   delay = 0,
 }: {
   value: string;
-  unit?: string;
   delay?: number;
 }) {
-  const parsed = useMemo(() => parseGaugeValue(value), [value]);
+  const parsed = useMemo(() => parseStatValue(value), [value]);
   const motionVal = useMotionValue(0);
   const display = useTransform(motionVal, (v) => {
     if (parsed.numeric === null) return value;
@@ -55,92 +68,106 @@ function CountingValue({
     };
   }, [parsed.numeric, value, delay, motionVal, display]);
 
-  return (
-    <span className={styles.gaugeValue}>
-      {text}
-      {unit ? <span className={styles.gaugeUnit}>{unit}</span> : null}
-    </span>
-  );
+  return <span className={styles.statNumber}>{text}</span>;
 }
 
-function GaugeRow({
-  label,
-  value,
-  unit,
-  index,
-}: {
-  label: string;
-  value: string;
-  unit?: string;
-  index: number;
-}) {
-  const parsed = useMemo(() => parseGaugeValue(value), [value]);
-  const pct = parsed.numeric !== null
-    ? Math.min(100, Math.max(8, Math.abs(parsed.numeric) > 100 ? 72 : Math.abs(parsed.numeric)))
-    : 55 + (index % 3) * 12;
-
-  return (
-    <div className={styles.gauge}>
-      <div className={styles.gaugeHeader}>
-        <span className={styles.gaugeLabel}>{label}</span>
-        <CountingValue value={value} unit={unit} delay={0.45 + index * 0.12} />
-      </div>
-      <div className={styles.meterTrack} aria-hidden="true">
-        <motion.div
-          className={styles.meterFill}
-          initial={{ width: '0%' }}
-          animate={{ width: `${pct}%` }}
-          transition={{ duration: 1.35, delay: 0.5 + index * 0.1, ease: [0.34, 1.1, 0.64, 1] }}
-        />
-        <div className={styles.meterTicks}>
-          {[0, 1, 2, 3, 4].map((t) => (
-            <span key={t} className={styles.meterTick} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ToggleSwitch({
-  label,
-  on,
-  index,
-}: {
-  label: string;
-  on: boolean;
-  index: number;
-}) {
+function ShimmerSweep() {
   return (
     <motion.div
-      className={`${styles.toggle} ${on ? styles.toggleOn : styles.toggleOff}`}
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: 0.7 + index * 0.08 }}
+      className={styles.shimmerSweep}
+      aria-hidden="true"
+      initial={{ x: '-120%' }}
+      animate={{ x: '220%' }}
+      transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 0.6 }}
+    />
+  );
+}
+
+function WaterBead() {
+  return (
+    <motion.span
+      className={styles.waterBead}
+      aria-hidden="true"
+      initial={{ left: '-6%' }}
+      animate={{ left: '104%', y: [0, -3, 0, 2, 0] }}
+      transition={{
+        left: { duration: 4.2, repeat: Infinity, ease: 'linear', repeatDelay: 0.8 },
+        y: { duration: 1.4, repeat: Infinity, ease: 'easeInOut' },
+      }}
+    />
+  );
+}
+
+function CoatingLayerBand({ layer, index }: { layer: CoatingLayer; index: number }) {
+  return (
+    <motion.div
+      className={`${styles.layerBand} ${layer.accent ? styles.layerBandAccent : ''}`}
+      initial={{ opacity: 0, x: -16 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.15 + index * 0.12 }}
     >
-      <span className={styles.toggleLabel}>{label}</span>
-      <span className={styles.toggleTrack} aria-hidden="true">
-        <span className={styles.toggleThumb} />
-      </span>
-      <span className={styles.toggleState}>{on ? 'ON' : 'OFF'}</span>
+      {layer.accent && (
+        <>
+          <ShimmerSweep />
+          <WaterBead />
+        </>
+      )}
+      <span className={styles.layerLabel}>{layer.label}</span>
+      <span className={styles.layerSub}>{layer.sub}</span>
     </motion.div>
   );
 }
 
-function PanelChrome({ children }: { children: React.ReactNode }) {
+function CoatingCrossSection({ layers }: { layers: CoatingLayer[] }) {
   return (
-    <div className={`${styles.panel} ${styles.shinePanel}`}>
-      <div className={styles.panelBezel} aria-hidden="true">
-        <span className={styles.shineGem} />
-        <span className={styles.panelTitle}>CERAMIC COAT LAB</span>
-        <span className={styles.shineGem} />
+    <div className={styles.crossSection}>
+      {layers.map((layer, i) => (
+        <CoatingLayerBand key={layer.key} layer={layer} index={i} />
+      ))}
+    </div>
+  );
+}
+
+function HeroStatStrip({ stats }: { stats: HeroStat[] }) {
+  return (
+    <div className={styles.statStrip}>
+      {stats.map((s, i) => (
+        <div key={s.label} className={styles.statItem}>
+          <CountingValue value={s.value} delay={0.5 + i * 0.12} />
+          <span className={styles.statLabel}>{s.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function TraitChips({ traits }: { traits: string[] }) {
+  return (
+    <div className={styles.traitRow}>
+      {traits.map((t, i) => (
+        <motion.span
+          key={t}
+          className={styles.traitChip}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.9 + i * 0.08 }}
+        >
+          {t}
+        </motion.span>
+      ))}
+    </div>
+  );
+}
+
+function LabPanel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className={styles.panel}>
+      <div className={styles.panelHeader}>
+        <span className={styles.panelHeaderDot} aria-hidden="true" />
+        <span className={styles.panelHeaderLabel}>GlossLab · Coating Composition</span>
       </div>
-      <div className={styles.panelStatus} aria-hidden="true">
-        <span className={styles.statusLed} />
-        <span className={styles.statusText}>SHINE METERS · ACTIVE</span>
-        <span className={styles.statusTime}>GLOSS</span>
-      </div>
-      <div className={styles.panelBody}>{children}</div>
+      {children}
     </div>
   );
 }
@@ -162,71 +189,17 @@ const chips = [
   '11+ Yrs Local',
   'Re-Detail Guarantee',
 ];
-const stats = [
-  {
-    "value": "9,000+",
-    "label": "Vehicles Detailed"
-  },
-  {
-    "value": "4.9 ★",
-    "label": "Google Rating"
-  },
-  {
-    "value": "1-Year",
-    "label": "Warranty Included"
-  },
-  {
-    "value": "Same-Day",
-    "label": "Service Available"
-  }
+const coatingLayers: CoatingLayer[] = [
+  { key: 'ceramic', label: 'Ceramic + Clear Gloss', sub: '9H hardness · hydrophobic', accent: true },
+  { key: 'paint',   label: 'Base Paint',            sub: 'Color & flake' },
+  { key: 'primer',  label: 'Primer',                sub: 'Corrosion barrier' },
 ];
-const meterTarget = 72;
-const meterTopLabel = "After";
-const meterMidLabel = "During";
-const meterBotLabel = "Before";
-const particleColor = '#a78bfa';
-const beforeImageSrc = '/pages/home/welcome/before.jpg';
-const afterImageSrc = '/pages/home/welcome/after.jpg';
-const beforeLabel = "Dull paint";
-const afterLabel = "Mirror finish";
-const mapCenterLabel = 'Service HQ';
-const mapPins = [
-  { label: 'Waco', x: 42, y: 48 },
-  { label: 'Temple', x: 68, y: 62 },
-  { label: 'Killeen', x: 58, y: 72 },
+const heroStats: HeroStat[] = [
+  { value: '9,000+', label: 'Vehicles detailed' },
+  { value: '4.9 ★',  label: 'Google rating' },
+  { value: '5-yr+',  label: 'Coating warranty' },
 ];
-const coverageLabel = 'Central Texas coverage';
-const materials = [
-  { name: "Exterior", swatch: "#a78bfa", imageSrc: "/pages/home/welcome/mat-1.jpg" },
-  { name: "Interior", swatch: "#c4b5fd", imageSrc: "/pages/home/welcome/mat-2.jpg" },
-  { name: "Ceramic", swatch: "#6d28d9", imageSrc: "/pages/home/welcome/mat-3.jpg" },
-  { name: "Correction", swatch: "#ddd6fe", imageSrc: "/pages/home/welcome/mat-1.jpg" },
-  { name: "PPF Prep", swatch: "#7c3aed", imageSrc: "/pages/home/welcome/mat-2.jpg" },
-  { name: "Fleet", swatch: "#4c1d95", imageSrc: "/pages/home/welcome/mat-3.jpg" }
-];
-const quote = "Ceramic coat looks insane in the Texas sun. Booked the full package and it was worth every dollar.";
-const authorName = "Chris P.";
-const authorMeta = "Detail package · Woodway";
-const rating = 5;
-const schematicLabel = "GlossLab schematic";
-const gauges = [
-  { label: "Cars detailed", value: "3,100+" },
-  { label: "Rating", value: "4.9 ★" },
-  { label: "Coatings", value: "5-yr+" },
-  { label: "Mobile", value: "Yes" }
-];
-const toggles = [
-  { label: "Before/after", on: true },
-  { label: "Weekend slots", on: true },
-  { label: "Photo proofs", on: true }
-];
-const textureSrc = '/pages/home/welcome/hero-main.jpg';
-const textureAlt = 'Texture';
-const accentWord = "GlossLab";
-
-  // Stable serial for SSR/hydration — avoid Math.random in render of serial
-  // by using a fixed-looking decorative suffix derived from gauge count.
-  const serial = `CH-${String(gauges.length).padStart(2, '0')}`;
+const heroTraits = ['Hydrophobic', 'UV-Stable', 'Product-Certified'];
 
   return (
     <section className={styles.hero} aria-label="Hero">
@@ -299,36 +272,11 @@ const accentWord = "GlossLab";
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.28, ease: 'easeOut' }}
         >
-          <PanelChrome>
-            <div className={styles.gaugeList}>
-              {gauges.map((g, i) => (
-                <GaugeRow
-                  key={g.label}
-                  label={g.label}
-                  value={g.value}
-                  unit={undefined}
-                  index={i}
-                />
-              ))}
-            </div>
-            {toggles.length > 0 && (
-              <div className={styles.toggleList}>
-                {toggles.map((t, i) => (
-                  <ToggleSwitch key={t.label} label={t.label} on={t.on} index={i} />
-                ))}
-              </div>
-            )}
-            <div className={styles.panelFooterStatic} aria-hidden="true">
-              <div className={styles.miniMeter}>
-                <span className={styles.miniMeterBar} />
-                <span className={styles.miniMeterBar} />
-                <span className={styles.miniMeterBar} />
-                <span className={styles.miniMeterBar} />
-                <span className={styles.miniMeterBar} />
-              </div>
-              <span className={styles.footerSerial}>{serial}</span>
-            </div>
-          </PanelChrome>
+          <LabPanel>
+            <CoatingCrossSection layers={coatingLayers} />
+            <HeroStatStrip stats={heroStats} />
+            <TraitChips traits={heroTraits} />
+          </LabPanel>
         </motion.div>
       </div>
     </section>
