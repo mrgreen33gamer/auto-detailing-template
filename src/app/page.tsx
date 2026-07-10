@@ -35,42 +35,36 @@ export default function HomePage() {
       title: "Full Detail",
       body: "Complete interior + exterior refresh — wash, decon, polish prep, vacuum, steam, and protection. Showroom results for daily drivers and weekend cars.",
       link: "/services/full-detail",
-      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faShieldHalved,
       title: "Ceramic Coating",
       body: "Professional multi-year ceramic coatings that lock in gloss, repel water, and stand up to Central Texas UV, heat, and road film.",
       link: "/services/ceramic-coating",
-      image: "/pages/home/services/service-2.jpg",
     },
     {
       icon: faSprayCanSparkles,
       title: "Paint Correction",
       body: "Single- and multi-stage correction to remove swirls, haze, and light scratches before coating — measured results, not marketing fluff.",
       link: "/services/paint-correction",
-      image: "/pages/home/services/service-3.jpg",
     },
     {
       icon: faCouch,
       title: "Interior Detail",
       body: "Deep vacuum, extraction, steam, leather/vinyl care, and odor treatment so the cabin feels as clean as the paint looks.",
       link: "/services/interior-detail",
-      image: "/pages/home/services/service-4.jpg",
     },
     {
       icon: faLightbulb,
       title: "Headlight Restoration",
       body: "Cut, polish, and UV-seal cloudy lenses so night visibility and curb appeal come back — without cheap temporary kits.",
       link: "/services/headlight-restoration",
-      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faCalendarCheck,
       title: "Maintenance Detail",
       body: "Keep ceramic-coated and daily-driven vehicles looking sharp with scheduled wash, decon, and interior top-ups.",
       link: "/services/maintenance-detail",
-      image: "/pages/home/services/service-2.jpg",
     },
   ];
 
