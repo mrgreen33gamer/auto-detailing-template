@@ -27,7 +27,8 @@
   flex-direction: column;
   gap: 0.9rem;
   position: relative;
-  overflow: hidden;
+  // visible so uniqueness radius mistakes cannot crescent-clip body text
+  overflow: visible;
 
   // subtle green glow top-left
   &::before {
@@ -261,25 +262,33 @@
 }
 
 /* === COOKIE UNIQUENESS — auto-detailing-template (GlossLab) ===
-   Previous 999px top-left radius clipped title/body into a weird crescent.
-   Keep brand purple accents without destroying the card geometry. */
+   NEVER use 999px / half-circle corner radii on .card — with overflow:hidden
+   they clip title, body, and buttons into an unreadable crescent (live bug).
+   Brand identity = soft rect card + left accent bar + pill CTAs only. */
 .backdrop {
   bottom: 1.5rem !important;
   right: 1.5rem !important;
   left: auto !important;
   top: auto !important;
   max-width: 380px !important;
-  transform: none;
+  width: min(380px, calc(100vw - 3rem)) !important;
+  transform: none !important;
+  overflow: visible !important;
 }
 
 .card {
   background: rgba($obsidian, 0.97) !important;
   border: 1px solid rgba($orange, 0.28) !important;
-  // Soft showroom corners — no mega-radius clipping
-  border-radius: 16px !important;
+  // Explicit 4-corner radius — no mega top-left radius
+  border-radius: 16px 16px 16px 16px !important;
   padding: 1.35rem 1.4rem 1.25rem !important;
   // Violet accent bar (detailing brand), not a cutaway corner
   border-left: 3px solid $orange !important;
+  // Content must stay fully visible
+  overflow: visible !important;
+  max-height: none !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
   box-shadow:
     0 24px 60px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba($orange, 0.08),
@@ -287,6 +296,14 @@
 
   &::before {
     background: radial-gradient(ellipse, rgba($orange, 0.14) 0%, transparent 65%) !important;
+    // Decorative glow only — never clip siblings
+    z-index: 0 !important;
+  }
+
+  // Keep interactive content above the glow
+  > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -332,13 +349,15 @@
 
 .actions {
   gap: 0.45rem !important;
+  flex-wrap: wrap !important;
 }
 
-// Stack buttons cleanly when the pill layout would wrap awkwardly
+// Stack buttons cleanly on narrow viewports
 @media (max-width: 420px) {
   .backdrop {
     bottom: 0 !important;
     right: 0 !important;
+    left: 0 !important;
     max-width: 100% !important;
     width: 100% !important;
   }
@@ -347,6 +366,19 @@
     border-radius: 18px 18px 0 0 !important;
     border-left-width: 0 !important;
     border-top: 3px solid $orange !important;
+    max-height: min(85vh, 640px) !important;
+    overflow-y: auto !important;
+  }
+
+  .actions {
+    flex-direction: column !important;
+  }
+
+  .btnDecline,
+  .btnEssential,
+  .btnAccept {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
 /* end cookie uniqueness */
