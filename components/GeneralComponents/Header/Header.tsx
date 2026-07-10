@@ -13,7 +13,7 @@ import styles from './styles.module.scss';
 
 export default function Header() {
 const logoName = 'GlossLab Auto Detailing';
-const logoTagline = 'Heating · Cooling · Comfort';
+const logoTagline = 'Ceramic · Correction · Detail';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
@@ -30,7 +30,7 @@ const marqueeItems = [
   'Ceramic Coatings · Paint Correction · Full Detail',
   'Satisfaction Re-Detail Guarantee',
   'Transparent Package Pricing',
-  '4.9? Google Rating · 1,600+ Reviews',
+  '4.9★ Google Rating · 1,600+ Reviews',
   'Product-Certified Detailers',
   '9,000+ Vehicles Detailed',
   'Serving Central Texas Since 2015',

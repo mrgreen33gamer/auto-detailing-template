@@ -260,41 +260,93 @@
   }
 }
 
-/* === COOKIE UNIQUENESS — auto-detailing-template === */
+/* === COOKIE UNIQUENESS — auto-detailing-template (GlossLab) ===
+   Previous 999px top-left radius clipped title/body into a weird crescent.
+   Keep brand purple accents without destroying the card geometry. */
 .backdrop {
   bottom: 1.5rem !important;
   right: 1.5rem !important;
   left: auto !important;
   top: auto !important;
-  max-width: 360px !important;
+  max-width: 380px !important;
   transform: none;
 }
 
 .card {
-  background: rgba($obsidian, 0.96) !important;
-  border: 2px solid rgba($orange, 0.25) !important;
-  border-radius: 999px 18px 18px 18px !important;
-  padding: 1.5rem !important;
-  border-left: 4px solid $orange !important;
-  
+  background: rgba($obsidian, 0.97) !important;
+  border: 1px solid rgba($orange, 0.28) !important;
+  // Soft showroom corners — no mega-radius clipping
+  border-radius: 16px !important;
+  padding: 1.35rem 1.4rem 1.25rem !important;
+  // Violet accent bar (detailing brand), not a cutaway corner
+  border-left: 3px solid $orange !important;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba($orange, 0.08),
+    0 0 40px rgba($orange, 0.08) !important;
+
+  &::before {
+    background: radial-gradient(ellipse, rgba($orange, 0.14) 0%, transparent 65%) !important;
+  }
 }
 
 .iconWrap {
-  border-radius: 0 !important;
+  border-radius: 10px !important;
   background: rgba($orange, 0.14) !important;
-  border-color: rgba($orange, 0.28) !important;
-  color: $orange !important;
+  border-color: rgba($orange, 0.32) !important;
+  color: $lightorange !important;
+}
+
+.title {
+  font-size: 1.05rem !important;
+  letter-spacing: 0.01em !important;
+}
+
+.sub {
+  color: rgba($lightorange, 0.7) !important;
+  letter-spacing: 0.08em !important;
+}
+
+.body {
+  font-size: 0.86rem !important;
+  color: rgba($white, 0.68) !important;
+  line-height: 1.65 !important;
 }
 
 .btnAccept {
-  background: $lightorange !important;
-  color: $obsidian !important;
-  border-radius: 4px !important;
-  &:hover { filter: brightness(1.08); }
+  background: $orange !important;
+  color: $white !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  &:hover {
+    background: $lightorange !important;
+    color: $obsidian !important;
+    filter: none;
+  }
 }
 
 .btnDecline,
 .btnEssential {
-  border-radius: 4px !important;
+  border-radius: 999px !important;
+}
+
+.actions {
+  gap: 0.45rem !important;
+}
+
+// Stack buttons cleanly when the pill layout would wrap awkwardly
+@media (max-width: 420px) {
+  .backdrop {
+    bottom: 0 !important;
+    right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .card {
+    border-radius: 18px 18px 0 0 !important;
+    border-left-width: 0 !important;
+    border-top: 3px solid $orange !important;
+  }
 }
 /* end cookie uniqueness */
