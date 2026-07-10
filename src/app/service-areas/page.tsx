@@ -14,7 +14,7 @@ const SERVICE_AREAS = [
     slug:        'waco-tx',
     county:      'McLennan County',
     badge:       'Home Base',
-    description: 'Our headquarters. Fastest response times, same-day service available 7 days a week. Full auto detailing repair, spring & cable repair, track and hardware, lighting, door maintenances, and commercial doors across all of Waco.',
+    description: 'Our headquarters. Fastest response times, same-day service available 7 days a week. Full detail, ceramic coating, paint correction, and interior care across all of Waco.',
     highlights:  ['Same-day service', 'Emergency dispatch', 'All services available'],
   },
   {
@@ -23,7 +23,7 @@ const SERVICE_AREAS = [
     county:      'McLennan County',
     badge:       'Primary Area',
     description: 'Full auto detailing coverage for Hewitt homes and businesses. Fast dispatch from our Waco base — typically under 45 minutes.',
-    highlights:  ['45-min dispatch', 'Residential & commercial', 'Door System upgrades'],
+    highlights:  ['45-min dispatch', 'Residential & commercial', 'Ceramic coating available'],
   },
   {
     city:        'Woodway',
@@ -38,7 +38,7 @@ const SERVICE_AREAS = [
     slug:        'bellmead-tx',
     county:      'McLennan County',
     badge:       '',
-    description: 'Reliable auto detailing service for Bellmead residents and businesses. Door System upgrades, repairs, and lighting installs — same-day when available.',
+    description: 'Reliable auto detailing service for Bellmead residents and businesses. Ceramic coating upgrades, paint correction, and interior detail — same-day when available.',
     highlights:  ['Residential & commercial', 'product-certified auto detailing technicians', 'No contracts'],
   },
   {
@@ -54,8 +54,8 @@ const SERVICE_AREAS = [
     slug:        'mcgregor-tx',
     county:      'McLennan County',
     badge:       '',
-    description: 'Auto Detailing repair, spring & cable repair, and shop power for McGregor homes and light industrial properties.',
-    highlights:  ['Shop & residential', 'Door System upgrades', 'Same-day when available'],
+    description: 'Full detail, ceramic coating, and paint correction for McGregor homes and light industrial fleet vehicles.',
+    highlights:  ['Shop & residential', 'Fleet vehicles welcome', 'Same-day when available'],
   },
   {
     city:        'Killeen',
