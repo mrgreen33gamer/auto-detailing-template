@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     siteName: "GlossLab Auto Detailing",
     locale: "en_US",
     type: "website",
-    images: [{ url: `${BASE_URL}/logos/scott-apps-banner.png`, alt: "Paint Correction — GlossLab Auto Detailing Waco TX" }],
+    images: [{ url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`, alt: "Paint Correction — GlossLab Auto Detailing Waco TX" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Paint Correction Waco TX | GlossLab",
     description: "Paint correction in Waco, TX — swirl removal, haze refinement, and multi-stage polishing before ceramic coating.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
 };
 

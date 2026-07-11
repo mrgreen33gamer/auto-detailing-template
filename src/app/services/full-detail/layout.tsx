@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     siteName: "GlossLab Auto Detailing",
     locale: "en_US",
     type: "website",
-    images: [{ url: `${BASE_URL}/logos/scott-apps-banner.png`, alt: "Full Detail — GlossLab Auto Detailing Waco TX" }],
+    images: [{ url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`, alt: "Full Detail — GlossLab Auto Detailing Waco TX" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Full Detail Waco TX | GlossLab",
     description: "Professional full detail in Waco, TX — interior and exterior wash, decon, polish prep, and protection for daily drivers and weekend cars.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
 };
 

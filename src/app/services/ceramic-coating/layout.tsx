@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     siteName: "GlossLab Auto Detailing",
     locale: "en_US",
     type: "website",
-    images: [{ url: `${BASE_URL}/logos/scott-apps-banner.png`, alt: "Ceramic Coating — GlossLab Auto Detailing Waco TX" }],
+    images: [{ url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`, alt: "Ceramic Coating — GlossLab Auto Detailing Waco TX" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ceramic Coating Waco TX | GlossLab",
     description: "Professional ceramic coating in Waco, TX — multi-year protection, gloss, and easier maintenance for Central Texas UV and heat.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
 };
 

@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     siteName: "GlossLab",
     locale: "en_US",
     type: "website",
-    images: [{ url: `${BASE_URL}/logos/scott-apps-banner.png`, alt: "GlossLab — Industries Served" }],
+    images: [{ url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`, alt: "GlossLab — Industries Served" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Industries We Serve | GlossLab",
     description: "Industry-specific web design, software & marketing for Texas businesses across 10+ verticals.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
   robots: { index: true, follow: true },
 };

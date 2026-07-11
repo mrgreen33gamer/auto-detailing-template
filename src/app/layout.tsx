@@ -124,7 +124,7 @@ export const metadata: Metadata = {
     siteName: "GlossLab Auto Detailing",
     images: [
       {
-        url: `${BASE_URL}/logos/scott-apps-banner.png?v=1`,
+        url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`,
         width: 1200,
         height: 630,
         alt: "GlossLab Auto Detailing — Waco TX Ceramic Coating & Full Detail",
@@ -138,7 +138,7 @@ export const metadata: Metadata = {
     title: "GlossLab Auto Detailing | Waco TX Auto Detailing",
     description:
       "Ceramic coatings, paint correction, full detail & interior care for Central Texas. Product-certified · Satisfaction Re-Detail Guarantee.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png?v=1`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
   robots: {
     index: true,

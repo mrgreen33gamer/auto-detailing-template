@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     siteName: "GlossLab Auto Detailing",
     locale: "en_US",
     type: "website",
-    images: [{ url: `${BASE_URL}/logos/scott-apps-banner.png`, alt: "Interior Detail — GlossLab Auto Detailing Waco TX" }],
+    images: [{ url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`, alt: "Interior Detail — GlossLab Auto Detailing Waco TX" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Interior Detail Waco TX | GlossLab",
     description: "Interior car detailing in Waco, TX — deep vacuum, extraction, steam, leather care, and odor treatment.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
 };
 

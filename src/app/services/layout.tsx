@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${BASE_URL}/logos/scott-apps-banner.png?v=3`,
+        url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`,
         alt: "GlossLab — Services for Central Texas Businesses",
       },
     ],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Services | GlossLab",
     description:
       "Web design, custom software, graphic design, and digital marketing for Central Texas. Fixed pricing, full ownership.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png?v=3`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
   robots: { index: true, follow: true },
 };
