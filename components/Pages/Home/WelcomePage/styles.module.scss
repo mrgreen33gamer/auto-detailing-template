@@ -7,43 +7,43 @@
   height: 100svh;
   background: $obsidian;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(
-      -55deg,
-      transparent,
-      transparent 22px,
-      rgba($white, 0.012) 22px,
-      rgba($white, 0.012) 23px
-    );
-    pointer-events: none;
-    z-index: 0;
-  }
+  isolation: isolate;
 }
 
-.shard {
+// ── Photographic parallax background ──────────────────────────────────────
+.bgLayer {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 46%;
-  height: 100%;
-  background: linear-gradient(
-    150deg,
-    transparent 0%,
-    rgba($orange, 0.02) 40%,
-    rgba($orange, 0.06) 100%
-  );
-  clip-path: polygon(28% 0%, 100% 0%, 100% 100%, 0% 100%);
-  pointer-events: none;
+  top: -8%;
+  left: 0;
+  width: 100%;
+  height: 116%;
+  z-index: 0;
+  will-change: transform;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+// Violet-on-obsidian scrim — keeps the wash-bay photo on-brand and the
+// headline legible. Darker on the left (text column), lighter toward the
+// photo card on the right.
+.scrim {
+  position: absolute;
+  inset: 0;
   z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 84% 14%, rgba(167, 139, 250, 0.24) 0%, rgba(167, 139, 250, 0) 55%),
+    radial-gradient(90% 80% at 8% 96%, rgba(109, 40, 217, 0.26) 0%, rgba(109, 40, 217, 0) 60%),
+    linear-gradient(100deg, rgba(10, 10, 15, 0.96) 0%, rgba(10, 10, 15, 0.86) 42%, rgba(10, 10, 15, 0.55) 74%, rgba(10, 10, 15, 0.4) 100%),
+    linear-gradient(180deg, rgba(10, 10, 15, 0.4) 0%, rgba(10, 10, 15, 0) 32%, rgba(10, 10, 15, 0.6) 100%);
 }
 
 .layout {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 1380px;
   margin: 0 auto;
   padding: clamp(6rem, 11vh, 9rem) clamp(1.5rem, 5vw, 5rem) clamp(5rem, 9vh, 7rem);
@@ -229,165 +229,104 @@
   }
 }
 
-// ── Ceramic Coat Lab — coating cross-section ─────────────────────────────
+// ── Authentic detailer photo card (replaces the coating cross-section) ────
 
-.panel {
-  width: min(100%, 400px);
-  background: linear-gradient(165deg, #1a1d22 0%, #121418 55%, #0e1014 100%);
-  border: 1px solid rgba($white, 0.1);
-  border-radius: 14px;
+.photoCard {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 4 / 5;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  border: 1px solid rgba($lightorange, 0.28);
   box-shadow:
-    inset 0 1px 0 rgba($white, 0.06),
-    0 0 0 1px rgba(0, 0, 0, 0.4),
-    0 28px 56px rgba(0, 0, 0, 0.45);
-  padding: 1.25rem 1.25rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
+    0 1px 0 rgba($white, 0.1) inset,
+    0 30px 60px -20px rgba(0, 0, 0, 0.75),
+    0 0 0 6px rgba($orange, 0.06);
 }
 
-.panelHeader {
-  display: flex;
+.photo {
+  object-fit: cover;
+  object-position: center;
+}
+
+// Violet-to-shadow glaze so the overlays stay readable and it reads as designed
+.photoGlaze {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 10, 15, 0) 42%, rgba(10, 10, 15, 0.78) 100%),
+    linear-gradient(300deg, rgba(167, 139, 250, 0.18) 0%, rgba(167, 139, 250, 0) 46%);
+}
+
+.photoBadge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: $textFont;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $offwhite;
+  background: rgba(10, 10, 15, 0.64);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba($lightorange, 0.32);
+  border-radius: $radius-md;
+  padding: 0.4rem 0.8rem;
 }
 
-.panelHeaderDot {
-  width: 7px;
-  height: 7px;
+.photoBadgeDot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: $orange;
-  box-shadow: 0 0 8px rgba($orange, 0.8);
-  animation: pulse 2.4s ease-in-out infinite;
+  background: $lightorange;
+  box-shadow: 0 0 8px 1px rgba($lightorange, 0.8);
   flex-shrink: 0;
 }
 
-.panelHeaderLabel {
-  font-family: $textFont;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba($white, 0.45);
-}
-
-.crossSection {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.layerBand {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  padding: 0.7rem 0.9rem;
-  border-radius: 8px;
-  background: rgba($white, 0.03);
-  border: 1px solid rgba($white, 0.07);
-  overflow: hidden;
-
-  // isometric-ish stagger — each band nudged in from the one above
-  &:nth-child(2) { margin-left: 0.5rem; }
-  &:nth-child(3) { margin-left: 1rem; }
-}
-
-.layerBandAccent {
-  background: linear-gradient(120deg, rgba($orange, 0.14), rgba($lightorange, 0.06));
-  border-color: rgba($orange, 0.35);
-  box-shadow: 0 0 20px rgba($orange, 0.12);
-}
-
-.layerLabel {
-  font-family: $textFont;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: $white;
-}
-
-.layerSub {
-  font-family: $textFont;
-  font-size: 0.66rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: rgba($white, 0.42);
-}
-
-.shimmerSweep {
+.specCard {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 45%;
-  background: linear-gradient(
-    100deg,
-    transparent 0%,
-    rgba($white, 0.16) 45%,
-    transparent 90%
-  );
-  pointer-events: none;
-}
-
-.waterBead {
-  position: absolute;
-  top: 0.5rem;
-  left: 0;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, rgba($white, 0.95), rgba(#bcd6ff, 0.4) 70%);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-  pointer-events: none;
-}
-
-.statStrip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid rgba($white, 0.07);
-}
-
-.statItem {
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.9rem;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.45rem;
+  padding: 0.85rem 1rem;
+  border-radius: $radius-md;
+  background: rgba(10, 10, 15, 0.62);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba($lightorange, 0.24);
 }
 
-.statNumber {
-  font-family: $titleFont;
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: $orange;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-
-.statLabel {
-  font-family: $textFont;
-  font-size: 0.62rem;
+.specRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: $headerFont;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  color: rgba($white, 0.42);
+  color: rgba($white, 0.92);
+
+  svg {
+    color: $lightorange;
+    flex-shrink: 0;
+  }
 }
 
-.traitRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.traitChip {
-  font-family: $textFont;
-  font-size: 0.64rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: rgba($white, 0.55);
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba($white, 0.08);
-  background: rgba($white, 0.03);
+@media (max-width: 960px) {
+  .visual {
+    min-height: 0;
+    margin-top: 0.25rem;
+  }
+  .photoCard {
+    max-width: 360px;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* === UNIQUENESS IDENTITY LAYER — auto-detailing-template === */
@@ -402,11 +341,6 @@
   grid-template-columns: minmax(0, 1.13fr) 1fr !important;
   gap: clamp(2.41rem, 4vw, 3.91rem) !important;
   padding-top: clamp(8.44rem, 11vh, 10.44rem) !important;
-}
-
-.shard {
-  clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
-  opacity: 0.43 !important;
 }
 
 .headline {
@@ -457,7 +391,7 @@
     background-size: 6px 6px, 9px 9px !important;
     opacity: 0.70 !important;
     pointer-events: none !important;
-    z-index: 0 !important;
+    z-index: 2 !important;
   }
 
   &::after {
@@ -466,7 +400,7 @@
     inset: 0 !important;
     background-image: radial-gradient(ellipse 50% 40% at 47% 11%, rgba($orange, 0.051), transparent 70%), radial-gradient(ellipse 40% 50% at 52% 83%, rgba($white, 0.03), transparent 65%) !important;
     pointer-events: none !important;
-    z-index: 0 !important;
+    z-index: 2 !important;
   }
 }
 /* end hero pattern */
